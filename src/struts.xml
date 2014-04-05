@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation"
+        value="false" />
+    <constant name="struts.devMode" value="false" />
+    <constant name="struts.custom.i18n.resources"
+        value="ApplicationResources" />
+ 
+    <package name="default" extends="struts-default" namespace="/">
+    
+        <action name="registerAction"
+            class="com.raghu.googsim.action.RegisterAction">
+            <result name="success">/home.jsp</result>
+            <result name="error">/registerUser.jsp</result>
+        </action>
+        
+        <action name="loginAction"
+            class="com.raghu.googsim.action.LoginAction">
+            <result name="success">/home.jsp</result>
+            <result name="error">/login.jsp</result>
+            <result name="input">/login.jsp</result>
+        </action>
+        <action name="logoutAction"
+            class="com.raghu.googsim.action.LoginAction" method="logout" >
+            <result name="success">/login.jsp</result>
+            <result name="error">/login.jsp</result>
+            <result name="input">/login.jsp</result>
+        </action>
+        
+        
+    </package>
+</struts>
