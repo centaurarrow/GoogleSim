@@ -6,15 +6,16 @@
 </s:if>
 <s:else>
 	<s:include value="public_header.jsp"/>
-        <div id="wrapper">
+	   <div id="wrapper">
             <div id="content">
                 <div id="box">
-                   	<h3 id="adduser">Login Form</h3>
-					<s:form id="form" action="loginAction">
-                      	<s:textfield key="user.username" id="username" label="Enter your Username"/>
-						<s:password key="user.password" label="Enter your password"/>
-						<s:submit /> 
-					</s:form>
+                   	<h3 id="adduser">Welcome to the Google Maps Simulator.</h3>
+					<s:div style="margin:10px;">
+						New Users, Please <a href="login.jsp">Login</a>
+					</s:div>
+					<s:div style="margin:10px;">
+						Registered Users, Please <a href="registerUser.jsp">Register here</a>
+					</s:div>
 				</div>
 			</div>
 		</div>

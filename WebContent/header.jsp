@@ -6,40 +6,42 @@
 			<s:set name="fullName" value="fullname" />
 		</s:iterator>
 	</s:if>
-	<html>
-	<head>
-		<style>
-			ul {
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-				overflow: hidden;
-			}
-			
-			li {
-				float: left;
-			}
-			
-			a {
-				display: block;
-				width: 60px;
-				background-color: #dddddd;
-			}
-		</style>
-	</head>
-	<body>
-		<s:div style="margin-left:400px">
-			<font face="arier" size="6"> Google Map Simulator Application </font>
-			<br clear="all" />
-			<br clear="all" />
-		</s:div>
-		<ul style="margin-left: 400px;">
-			<li><a class="menu" href="home.jsp">Home</a></li>
-			<li><a class="menu" href="home.jsp">Products</a></li>
-			<li><a class="menu" href="home.jsp">Admin</a></li>
-			<li><a class="menu" href="logoutAction.action">Logout</a></li>
-			<li>Welcome <s:property value="fullName" /></li>
-		</ul>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Users - Admin Template</title>
+<link rel="stylesheet" type="text/css" href="css/theme.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script>
+   var StyleFile = "theme" + document.cookie.charAt(6) + ".css";
+   document.writeln('<link rel="stylesheet" type="text/css" href="css/' + StyleFile + '">');
+</script>
+<!--[if IE]>
+<link rel="stylesheet" type="text/css" href="css/ie-sucks.css" />
+<![endif]-->
+</head>
+<body>
+	<div id="container">
+    	<div id="header">
+        	<h2>Google Maps Simulator</h2>
+		    <div id="topmenu">
+            	<ul>
+	              	<li><a href="index.jsp">Home</a></li>
+	              	<li><a href="index.jsp">Taxis</a></li>
+	              	<li><a href="index.jsp">Routes</a></li>
+	              	<li><a href="logoutAction">Logout</a></li>
+       	      	</ul>
+    	      </div>
+    	 </div>			
+    	 <div id="top-panel">
+            <div id="panel">
+                <ul>
+					<li><a href="#" class="useradd"> Welcome <s:property value="fullName" /></a></li>
+                </ul>
+            </div>
+        </div>
+    	 
+    	
 </s:if>
 <s:else>
 	<jsp:forward page="login.jsp" />

@@ -8,17 +8,21 @@
 </s:if>
 <s:else>
 	<jsp:include page="public_header.jsp"/>
-		<s:div style="margin-left:400px;">
-			<h2 style="margin-left:150px;">Registration Form</h2>
-			<s:form action="registerAction">
-					<s:textfield key="registeredUser.fullname" label="Enter your Fullname"/>
-					<s:textfield key="registeredUser.username" label="Enter your Username"/>
-					<s:password key="registeredUser.password" label="Enter your password"/>
-					<s:textfield key="registeredUser.email" label="Enter your Email"/>
-					<s:textfield key="registeredUser.gender" label="Enter your Gender"/>
-					<s:textfield key="registeredUser.country" label="Enter your Country"/>
-					<s:submit /> 
-			</s:form>
-		</s:div>
+        <div id="wrapper">
+            <div id="content">
+                <div id="box">
+                   	<h3 id="adduser">Registartion Form</h3>
+					<s:form id="form" action="registerAction">
+							<s:textfield key="registeredUser.fullname" label="Enter your Fullname"/>
+							<s:textfield key="registeredUser.username" label="Enter your Username"/>
+							<s:password key="registeredUser.password" label="Enter your password"/>
+							<s:textfield key="registeredUser.email" label="Enter your Email"/>
+							<s:textfield key="registeredUser.gender" label="Enter your Gender"/>
+							<s:textfield key="registeredUser.country" label="Enter your Country"/>
+							<s:submit /> 
+					</s:form>
+				</div>
+			</div>
+		</div>
 	<jsp:include page="public_footer.jsp"/>
 </s:else>

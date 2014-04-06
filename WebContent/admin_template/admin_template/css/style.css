@@ -139,6 +139,9 @@ margin-top:20px;
 /*********************
 		Other
 *********************/
+#contentbody{
+	margin:15px;
+}
 .a-right{text-align:right;}
 .a-left{text-align:left;}
 .a-center{text-align:center;}
@@ -228,6 +231,13 @@ td, th{
 thead{
 
 }
+
+table.wwFormTable{
+	display: table;
+	border-collapse: separate;
+	border-spacing: 0px;
+	border-color: white;  
+}
 /*********************
 		Home
 *********************/
@@ -306,11 +316,20 @@ form#form label {
 	clear:left;
 	display:block;
 	float:left;
-	width:100px;
 	text-align:right;
 	padding-right:10px;
 	margin-bottom:5px;
 }
+label.label {
+	clear:left;
+	display:block;
+	float:left;
+	text-align:right;
+	width:150px;
+	padding-right:10px;
+	margin-bottom:5px;
+}
+
 form#form input {
 	padding:3px;
 	margin-bottom:5px;
