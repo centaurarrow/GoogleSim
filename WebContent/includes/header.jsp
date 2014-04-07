@@ -12,6 +12,9 @@
 <title>Users - Admin Template</title>
 <link rel="stylesheet" type="text/css" href="css/theme.css" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+<script type="text/javascript" charset="utf-8"  src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" charset="utf-8"  src="js/jquery.tablesorter.js"></script>
 <script>
    var StyleFile = "theme" + document.cookie.charAt(6) + ".css";
    document.writeln('<link rel="stylesheet" type="text/css" href="css/' + StyleFile + '">');
@@ -27,7 +30,7 @@
 		    <div id="topmenu">
             	<ul>
 	              	<li><a href="index.jsp">Home</a></li>
-	              	<li><a href="index.jsp">Taxis</a></li>
+	              	<li><a href="allTaxisAction">Taxis</a></li>
 	              	<li><a href="index.jsp">Routes</a></li>
 	              	<li><a href="logoutAction">Logout</a></li>
        	      	</ul>

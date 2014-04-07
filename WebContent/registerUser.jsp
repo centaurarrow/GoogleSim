@@ -7,7 +7,7 @@
 	</jsp:forward>
 </s:if>
 <s:else>
-	<jsp:include page="public_header.jsp"/>
+	<jsp:include page="includes/public_header.jsp"/>
         <div id="wrapper">
             <div id="content">
                 <div id="box">
@@ -24,5 +24,5 @@
 				</div>
 			</div>
 		</div>
-	<jsp:include page="public_footer.jsp"/>
+	<jsp:include page="includes/public_footer.jsp"/>
 </s:else>

@@ -10,7 +10,7 @@
     <constant name="struts.custom.i18n.resources"
         value="ApplicationResources" />
  
-    <package name="default" extends="struts-default" namespace="/">
+    <package name="default" extends="struts-default,json-default" namespace="/">
     
         <action name="registerAction"
             class="com.raghu.googsim.action.RegisterAction">
@@ -30,7 +30,20 @@
             <result name="error">/login.jsp</result>
             <result name="input">/login.jsp</result>
         </action>
-        
-        
+       
+       <action name="allTaxisAction" 
+            class="com.raghu.googsim.action.TaxiListAction" method="AllTaxis" >
+            <result name="success">taxi/taxis.jsp</result>
+            <result name="error">/home.jsp</result>
+        </action>
+
+       <action name="allTaxisAction1" 
+            class="com.raghu.googsim.action.TaxiListAction" method="AllTaxis" >
+            <result type="json"/>
+        </action>
+
+
     </package>
+    
+    
 </struts>

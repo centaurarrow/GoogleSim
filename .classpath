@@ -13,5 +13,7 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/RaghuNandan/Downloads/displaytag-1.2-bin/displaytag-1.2/displaytag-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/RaghuNandan/Downloads/struts-2.3.16.1-all/struts-2.3.16.1/lib/struts2-json-plugin-2.3.16.1.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
