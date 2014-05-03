@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class ConnectionService {
 	//static reference to itself
 	private static ConnectionService instance = new ConnectionService();
-	public static final String URL = "jdbc:mysql://localhost/beijing";
+	public static final String URL = "jdbc:mysql://localhost/sfo";
 	public static final String USER = "root";
 	public static final String PASSWORD = "password";
 	public static final String DRIVER_CLASS = "com.mysql.jdbc.Driver"; 

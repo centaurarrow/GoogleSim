@@ -1,11 +1,15 @@
 package com.raghu.googsim.model;
 
+import java.util.Date;
+import java.sql.Time;
+
 public class Location {
 	private double latitude;
 	private double longitude;
-	private int speed;
-	private int direction;
-	private String time;
+	private double speed;
+	private double direction;
+	private Date date;
+	private Time time;
 	public double getLatitude() {
 		return latitude;
 	}
@@ -18,23 +22,23 @@ public class Location {
 	public void setLongitude(double longitude) {
 		this.longitude = longitude;
 	}
-	public int getSpeed() {
+	public double getSpeed() {
 		return speed;
 	}
-	public void setSpeed(int speed) {
+	public void setSpeed(double speed) {
 		this.speed = speed;
 	}
-	public int getDirection() {
+	public double getDirection() {
 		return direction;
 	}
-	public void setDirection(int direction) {
+	public void setDirection(double direction) {
 		this.direction = direction;
 	}
-	public String getTime() {
-		return time;
+	public Date getDate() {
+		return date;
 	}
-	public void setTime(String time) {
-		this.time = time;
+	public void setDate(Date date) {
+		this.date = date;
 	}
 	
 }

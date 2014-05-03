@@ -41,6 +41,72 @@
             class="com.raghu.googsim.action.TaxiListAction" method="AllTaxis" >
             <result type="json"/>
         </action>
+        
+        <action name="getTaxisAtGivenTime" 
+            class="com.raghu.googsim.action.TaxiAction" method="TaxisAtGivenTime" >
+            <result type="json">taxi/gettaxis.jsp</result>
+            <result name="error">/home.jsp</result>
+        </action>
+        
+
+       <action name="AllLocationsForTaxiAction" 
+            class="com.raghu.googsim.action.TaxiAction" >
+            <result name="success">taxi/routes.jsp</result>
+            <result name="error">/home.jsp</result>
+        </action>
+
+       <action name="AllLocationsForRouteActionJson" 
+            class="com.raghu.googsim.action.RouteAction" >
+            <result type="json">taxi/routelocation.jsp</result>
+            <result name="error">/home.jsp</result>
+        </action>
+
+       <action name="AllLocationsForAllRouteActionJson" 
+            class="com.raghu.googsim.action.TaxiAction" method="AllLocationsForAllRoutes">
+            <result type="json">taxi/routescloud.jsp</result>
+            <result name="error">/home.jsp</result>
+        </action> 
+
+		<action name="SimilarRoutesForRouteID" 
+            class="com.raghu.googsim.action.TaxiAction" method="SimilarRoutesForRouteID">
+            <result type="json">taxi/routessimilar.jsp</result>
+            <result name="error">/home.jsp</result>
+        </action>
+        
+        <action name="SimilarRoutesForCurrentRoute" 
+            class="com.raghu.googsim.action.TaxiAction" method="SimilarRoutesForCurrentRoute">
+            <result type="json">taxi/routespredict.jsp</result>
+            <result name="error">/home.jsp</result>
+        </action> 
+        
+        <action name="startAndEndLocationsofRoutesForAUser" 
+            class="com.raghu.googsim.action.TaxiAction" method="startAndEndLocationsofRoutesForAUser">
+            <result type="json">taxi/routespredict.jsp</result>
+        </action>
+
+       <action name="routes" >
+            <result>taxi/routes.jsp</result>
+        </action>
+
+       <action name="routelocation" >
+            <result>taxi/routelocation.jsp</result>
+        </action>
+	
+	   <action name="gettaxis" >
+            <result>taxi/gettaxis.jsp</result>
+        </action>
+
+	   <action name="routescloud" >
+            <result>taxi/routescloud.jsp</result>
+       </action> 
+       
+       <action name="routessimilar" >
+            <result>taxi/routessimilar.jsp</result>
+        </action>
+       
+       <action name="routespredict" >
+            <result>taxi/routespredict.jsp</result>
+        </action>
 
 
     </package>

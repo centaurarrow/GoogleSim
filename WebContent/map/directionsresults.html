@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+      #panel {
+        position: absolute;
+        top: 5px;
+        left: 30%;
+        margin-left: -180px;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+      }
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8yIIQagPjfQkOJ9a4XE14z6g4EZ62dNY&sensor=true">
+    </script>
+    <script type="text/javascript">
+     var directionsDisplay;
+     var directionsService = new google.maps.DirectionsService();
+     var map;
+      function initialize(){
+    	//create directionsDisplay 
+    	directionsDisplay = new google.maps.DirectionsRenderer();
+    	var chicago = new google.maps.LatLng(41.850033, -87.6500523);
+    	//create the mapOptions object.
+    	var mapOptions = {
+    		center:new google.maps.LatLng(41.7875, -87.6061),
+    		zoom : 7
+   		};
+    	
+    	//create the map object
+    	map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
+    	directionsDisplay.setMap(map);
+    	directionsDisplay.setPanel(document.getElementById("directionsPanel"));
+    	
+    	var trafficLayer = new google.maps.TrafficLayer();
+  //  	trafficLayer.setMap(map);
+      }
+      
+      function calcRoute(){
+    	  var start = document.getElementById('start').value;
+    	  var end = document.getElementById('end').value;
+    	  // creating the directionsRequest object
+    	  var request = {
+			  origin:start,
+			  destination:end,
+			  travelMode:google.maps.TravelMode.DRIVING,
+			  provideRouteAlternatives : true,
+			  durationInTraffic:false
+    	  };
+    	  
+    	  directionsService.route(request,function(response,status){
+    		  if(status == google.maps.DirectionsStatus.OK){
+    			  console.log(response);
+    			  directionsDisplay.setDirections(response);
+    		  }
+    	  });
+      }
+
+      function calcRouteText(){
+    	  var start = document.getElementById('starttext').value;
+    	  var end = document.getElementById('endtext').value;
+    	  // creating the directionsRequest object
+    	  var request = {
+			  origin:start,
+			  destination:end,
+			  travelMode:google.maps.TravelMode.DRIVING,
+			  provideRouteAlternatives : true,
+			  durationInTraffic:false
+    	  };
+    	  
+    	  directionsService.route(request,function(response,status){
+    		  if(status == google.maps.DirectionsStatus.OK){
+    			  directionsDisplay.setDirections(response);
+    		  }
+    	  });
+      }
+  	//create an event to load 
+  	google.maps.event.addDomListener(window,'load',initialize);
+
+  	</script>
+  </head>
+  <body>
+    <div id="panel">
+    <b>Start: </b>
+    <select id="start" onchange="calcRoute();">
+      <option value="chicago, il">Chicago</option>
+      <option value="st louis, mo">St Louis</option>
+      <option value="joplin, mo">Joplin, MO</option>
+      <option value="oklahoma city, ok">Oklahoma City</option>
+      <option value="amarillo, tx">Amarillo</option>
+      <option value="gallup, nm">Gallup, NM</option>
+      <option value="flagstaff, az">Flagstaff, AZ</option>
+      <option value="winona, az">Winona</option>
+      <option value="kingman, az">Kingman</option>
+      <option value="barstow, ca">Barstow</option>
+      <option value="san bernardino, ca">San Bernardino</option>
+      <option value="los angeles, ca">Los Angeles</option>
+    </select>
+    <b>End: </b>
+    <select id="end" onchange="calcRoute();">
+      <option value="chicago, il">Chicago</option>
+      <option value="st louis, mo">St Louis</option>
+      <option value="joplin, mo">Joplin, MO</option>
+      <option value="oklahoma city, ok">Oklahoma City</option>
+      <option value="amarillo, tx">Amarillo</option>
+      <option value="gallup, nm">Gallup, NM</option>
+      <option value="flagstaff, az">Flagstaff, AZ</option>
+      <option value="winona, az">Winona</option>
+      <option value="kingman, az">Kingman</option>
+      <option value="barstow, ca">Barstow</option>
+      <option value="san bernardino, ca">San Bernardino</option>
+      <option value="los angeles, ca">Los Angeles</option>
+    </select>
+    <input type="text" value="" name="starttext" id="starttext"/>
+    <input type="text" value="" name="endtext" id="endtext"/>
+    <input type="button" value="button" onclick="calcRouteText()"/>
+    </div>
+    <div id="map-canvas" style="float:left;width:70%; height:100%"></div>
+	<div id="directionsPanel" style="float:right;width:30%;height 100%"></div>
+  </body>
+</html>

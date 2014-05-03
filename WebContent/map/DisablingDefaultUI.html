@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 100% }
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8yIIQagPjfQkOJ9a4XE14z6g4EZ62dNY&sensor=true">
+    </script>
+    <script type="text/javascript">
+     var map;
+      function initialize(){
+    	  //create the mapOptions object.
+        var myLatLng = new google.maps.LatLng(41.7875, -87.6061);
+    	var mapOptions = {
+    		center: myLatLng,
+    		zoom : 4,
+    	    mapTypeControl: true,
+    	    mapTypeControlOptions: {
+    	      style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+    	    },
+    	    zoomControl: true,
+    	    zoomControlOptions: {
+    	      style: google.maps.ZoomControlStyle.SMALL
+    	    },
+    	    scaleControl: true
+   		};
+    	
+    	//create the map object
+    	var map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
+		
+      }
+
+     //Messages are not associated with the marker's instance data
+     function attachSecretMessage(marker,number){
+    	 var message = ["This","is","the","secret","Message"];
+    	 var infowindow = new google.maps.InfoWindow({
+    		 content : message[number],
+    		 size : new google.maps.Size(50,50)
+    	 });
+    	 
+    	 google.maps.event.addListener(marker,'click',function(){
+    		 infowindow.open(map,marker)
+    	 });
+     }
+      
+  	//create an event to load 
+  	google.maps.event.addDomListener(window,'load',initialize);
+
+  	</script>
+  </head>
+  <body>
+    <div id="map-canvas"/>
+  </body>
+</html>

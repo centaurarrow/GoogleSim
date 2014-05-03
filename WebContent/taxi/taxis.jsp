@@ -23,7 +23,9 @@
 									<th width="40px"><a href="#">ID<img src="img/icons/arrow_down_mini.gif" width="16" height="16" align="absmiddle" /></a></th>
 	                            	<th width="40px"><a href="#">Taxi ID</a></th>
 	                            	<th><a href="#">Full Name</a></th>
-	                                <th><a href="#">View Routes</a></th>
+	                                <th><a href="">View Routes</a></th>
+	                                <th><a href="">Routes Cloud</a></th>
+	                                <th><a href="">Predict Route</a></th>
 	                            </tr>
 							</thead>
 							<tbody>
@@ -32,15 +34,30 @@
 									 <td class="a-center"><s:property value="#stat.count"/></td> 
 	                            	<td class="a-center"><s:property value="#taxiList.getTaxiUserId()" /></td>
 	                            	<td><s:property value="#taxiList.getTaxiUserName()" /></td>
-	                                <td><a href="#">View Routes</a></td>
+	                                <td>
+									   <s:url id="url" action="AllLocationsForTaxiAction" >
+									      <s:param name="tUserId"><s:property value="#taxiList.getTaxiUserId()"/></s:param>
+									    </s:url>
+									    <s:a href="%{url}">View Routes</s:a>
+									</td>
+									<td> 
+									   <s:url id="url" action="routescloud" >
+									      <s:param name="tUserId"><s:property value="#taxiList.getTaxiUserId()"/></s:param>
+									    </s:url>
+									    <s:a href="%{url}">Routes Cloud</s:a>
+									</td>
+									<td> 
+									   <s:url id="url" action="routespredict" >
+									      <s:param name="tUserId"><s:property value="#taxiList.getTaxiUserId()"/></s:param>
+									      <s:param name="tRouteId"><s:property value="-1"/></s:param>
+									    </s:url>
+									    <s:a href="%{url}">Predict Route</s:a>
+									</td>
+									
                             	</tr>
 							</s:iterator>
 							</tbody>
 						</table> 
-						
-					<display:table export="true" id="data" name="taxiUserList" pagesize="10" >
-						<display:column property="getTaxiUserId()" title="Rank" sortable="true"/>
-					</display:table>
 						
                 </div>
              </div>
